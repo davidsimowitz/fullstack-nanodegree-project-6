@@ -227,30 +227,30 @@ Server Configuration
   * Edit application to correct relative path errors.
     + In dunder __init__.py add the following line above the "import models" statement to prevent ModuleNotFoundError.
       ```bash
-      $ sys.path.insert(0, '/var/www/flask/coordinate/')
+        sys.path.insert(0, '/var/www/flask/coordinate/')
       ```
     + In models.py update "DB" to include the correct user account for database access.
       ```bash
-      $ DB = 'postgresql://<user>:<password>@<host>:<port>/<database>'
+        DB = 'postgresql://<user>:<password>@<host>:<port>/<database>'
       ```
     + In dunder __init__.py update "CLIENT_ID" to be set to the following.
       ```bash
       $ CLIENT_ID = json.loads(
-      $     open('/var/www/flask/coordinate/client_secret.json', 'r').read())['web']['client_id']
+            open('/var/www/flask/coordinate/client_secret.json', 'r').read())['web']['client_id']
       ```
     + In dunder __init__.py, in the google_connect() function, update "oauth_flow" to be set to the following.
       ```bash
-      $ oauth_flow = oauth2client.client.flow_from_clientsecrets(
+        oauth_flow = oauth2client.client.flow_from_clientsecrets(
                            '/var/www/flask/coordinate/client_secret.json',
                            scope=['email', 'openid'],
                            redirect_uri='postmessage')
       ```
     + In models.py update the following two lines in the icon_list() function to adjust for the path changes.
       ```bash
-      $ def icon_list(path='/var/www/flask/coordinate/static/img/'):
+      def icon_list(path='/var/www/flask/coordinate/static/img/'):
       ```
       ```bash
-                        icons.append('/static/img/' + image)
+                      icons.append('/static/img/' + image)
       ```
 
 + Database Setup
