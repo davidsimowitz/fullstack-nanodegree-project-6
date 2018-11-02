@@ -245,6 +245,13 @@ Server Configuration
                            scope=['email', 'openid'],
                            redirect_uri='postmessage')
       ```
+    + In models.py update the following two lines in the icon_list() function to adjust for the path changes.
+      ```bash
+      $ def icon_list(path='/var/www/flask/coordinate/static/img/'):
+      ```
+      ```bash
+                        icons.append('/static/img/' + image)
+      ```
 
 + Database Setup
   * Enter application directory.
