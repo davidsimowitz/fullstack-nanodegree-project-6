@@ -247,6 +247,10 @@ Server Configuration
       ```
 
 + Database Setup
+  * Enter application directory.
+    ```bash
+    $ cd /var/www/flask/coordinate
+    ```
   * Create database.
     ```bash
     $ sudo -u postgres createdb events.db
