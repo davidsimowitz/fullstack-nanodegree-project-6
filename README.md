@@ -336,6 +336,15 @@ Server Configuration
   $ sudo a2ensite coordinate
   $ sudo apache2ctl restart
   ```
++ Update system packages—and dependencies—to their most recent versions.
+  ```bash
+  $ sudo apt-get update
+  $ sudo apt-get dist-upgrade
+  ```
+  * Reboot the linux server for the system updates to take effect.
+    + Login to Amazon Lightsail account.
+    + Under the 'Instances' tab, click the 3-dot menu icon, and select 'Manage'.
+    + Click the 'Reboot' button.
 
 
 Resources
