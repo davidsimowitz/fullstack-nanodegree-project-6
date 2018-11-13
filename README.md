@@ -6,7 +6,7 @@ Udacity - Full Stack Web Developer Nanodegree
 ---------------------------------------------
 P6: Linux Server Configuration
 
-A web application server—built from a baseline Linux installation—secured against a number of attack vectors and configured to serve the Item Catalog project.
+A web application server—built from a baseline Linux installation—secured against a number of attack vectors and configured to serve the [Item Catalog Application (Coordinate App)](https://github.com/davidsimowitz/fullstack-nanodegree-project-4).
 
 
 Requirements
@@ -225,15 +225,15 @@ Server Configuration
     $ sudo vim /var/www/flask/coordinate/client_secret.json
     ```
   * Edit application to correct relative path errors.
-    + In dunder __init__.py add the following line above the "import models" statement to prevent ModuleNotFoundError.
+    + In dunder __init__.py, add the following line above the "import models" statement to prevent ModuleNotFoundError.
       ```bash
       sys.path.insert(0, '/var/www/flask/coordinate/')
       ```
-    + In models.py update "DB" to include the correct user account for database access.
+    + In models.py, update "DB" to include the correct user account for database access.
       ```bash
       DB = 'postgresql://<user>:<password>@<host>:<port>/<database>'
       ```
-    + In dunder __init__.py update "CLIENT_ID" to be set to the following.
+    + In dunder __init__.py, update "CLIENT_ID" to be set to the following.
       ```bash
       CLIENT_ID = json.loads(
           open('/var/www/flask/coordinate/client_secret.json', 'r').read())['web']['client_id']
@@ -245,7 +245,7 @@ Server Configuration
                        scope=['email', 'openid'],
                        redirect_uri='postmessage')
       ```
-    + In models.py update the following two lines in the icon_list() function to adjust for the path changes.
+    + In models.py, update the following two lines in the icon_list() function to adjust for the path changes.
       ```bash
       def icon_list(path='/var/www/flask/coordinate/static/img/'):
       ```
@@ -336,6 +336,7 @@ Server Configuration
   $ sudo a2ensite coordinate
   $ sudo apache2ctl restart
   ```
+
 + Update system packages—and dependencies—to their most recent versions.
   ```bash
   $ sudo apt-get update
