@@ -6,7 +6,7 @@ Udacity - Full Stack Web Developer Nanodegree
 ---------------------------------------------
 P6: Linux Server Configuration
 
-This project's objective is to setup a web application server—built from a baseline Linux installation—secured against a number of attack vectors and configured to serve the [Item Catalog Application (Coordinate App)](https://github.com/davidsimowitz/fullstack-nanodegree-project-4).
+This project's objective is to set up a web application server—built from a baseline Linux installation—secured against a number of attack vectors and configured to serve the [Item Catalog Application (Coordinate App)](https://github.com/davidsimowitz/fullstack-nanodegree-project-4).
 
 
 Requirements
