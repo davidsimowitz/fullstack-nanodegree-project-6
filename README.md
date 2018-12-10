@@ -347,6 +347,39 @@ Server Configuration
     + Under the 'Instances' tab, click the 3-dot menu icon, and select 'Manage'.
     + Click the 'Reboot' button.
 
++ Set up Automatic Updates.
+  * Install unattended-upgrades package.
+  ```bash
+  $ sudo apt install unattended-upgrades
+  ```
+  * Open default configuration file for unattended-upgrades package.
+  ```bash
+  $ sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+  ```
+  * Configure automatic updates for packages in the following four distros under 'Unattended-Upgrade::Allowed-Origins'.
+  ```bash
+    Unattended-Upgrade::Allowed-Origins {
+        "${distro_id}:${distro_codename}";
+        "${distro_id}:${distro_codename}-security";
+        "${distro_id}ESM:${distro_codename}";
+        "${distro_id}:${distro_codename}-updates";
+    }
+  ```
+  * Activate automatic updates through main configuration file for APT suite of tools in APT-conf directory.
+  ```bash
+  $ sudo vim /etc/apt/apt.conf.d/20auto-upgrades
+  ```
+  * Enable the following configuration options to update the package list, download, and install available upgrades daily, as well as clean the local download archive every 4 weeks.
+  ```bash
+  APT::Periodic::Update-Package-Lists "1";
+  APT::Periodic::Download-Upgradeable-Packages "1";
+  APT::Periodic::Unattended-Upgrade "1";
+  APT::Periodic::AutocleanInterval "28";
+  ```
+  * Test unattended-upgrades using the following command to perform a manual run.
+  ```bash
+  $ sudo unattended-upgrade --debug
+  ```
 
 Resources
 ---------
