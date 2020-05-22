@@ -1,24 +1,49 @@
-Linux Server
-============================================
+Linux Server Configuration
+==========================
+
 
 
 Udacity - Full Stack Web Developer Nanodegree
 ---------------------------------------------
-P6: Linux Server Configuration
+Deploying to Linux Servers Project
 
-This project's objective was to set up a web application server—built from a baseline Linux installation—secured against a number of attack vectors and configured to serve the [Item Catalog Application (Coordinate App)](https://github.com/davidsimowitz/fullstack-nanodegree-project-4).
+
+Objective
+---------
+
+Build a web application server from a baseline Linux installation on Amazon Lightsail. Configure the instance to serve the [Coordinate Application (The Backend: Databases & Applications Project)](https://github.com/davidsimowitz/fullstack-nanodegree-project-4) and secure it against a number of attack vectors.
+
+
+
+IP Address
+==========
+
+
++ 35.168.251.43
+
+
+
+Application  URL
+================
+
++ Access the app currently hosted on the web application server using a [wildcard DNS](http://itemcatalog.com.35.168.251.43.xip.io/) provided by [xip.io](http://xip.io/).
+  * `http://itemcatalog.com.35.168.251.43.xip.io/`
+
 
 
 Requirements
-------------
+============
+
 
 + A Web Browser such as [Chrome](https://www.google.com/chrome/browser/) or [Firefox](https://www.mozilla.org/en-US/firefox/new/) is installed.
 
 + Access to a command line terminal such as [bash](https://www.gnu.org/software/bash/) or an SSH client such as [PuTTY](https://www.putty.org/) to remotely connect to the server.
 
 
+
 Usage
------
+=====
+
 
 + SSH into the Linux server as 'grader' using the provided key.
   ```bash
@@ -26,23 +51,13 @@ Usage
   ```
 + Enter passphrase for grader_rsa key (Both the key and the passphrase are included in the "Notes to Reviewer" field).
 
-+ Access the [Item Catalog](http://itemcatalog.com.35.168.251.43.xip.io) being run on the server.
++ Access the [Coordinate App](http://itemcatalog.com.35.168.251.43.xip.io) being run on the server.
 
-
-IP Address
-----------
-
-+ 35.168.251.43
-
-
-URL
----
-
-+ http://itemcatalog.com.35.168.251.43.xip.io
 
 
 Server Configuration
---------------------
+====================
+
 
 + Initial server setup
   * Create instance on Amazon Lightsail.
@@ -381,8 +396,12 @@ Server Configuration
   $ sudo unattended-upgrade --debug
   ```
 
+
+
 Resources
----------
+=========
+
+
 + [Official Ubuntu Documentation](https://help.ubuntu.com/)
 
 + [Ubuntu Time Management](https://help.ubuntu.com/community/UbuntuTime)
